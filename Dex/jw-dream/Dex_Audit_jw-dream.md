@@ -30,8 +30,8 @@ SafeERC20을 사용하거나 transfer/transferFrom 반환값이 체크되어 있
 
 
 swap 함수
-- 26 Line : [outputAmount = yBalance * (tokenXAmount * 999 / 1000) / (xBalance + (tokenXAmount * 999 / 1000))]
-- 35 Line : [outputAmount = xBalance * (tokenYAmount * 999 / 1000) / (yBalance + (tokenYAmount * 999 / 1000))]
+- 26 Line : outputAmount = yBalance * (tokenXAmount * 999 / 1000) / (xBalance + (tokenXAmount * 999 / 1000))
+- 35 Line : outputAmount = xBalance * (tokenYAmount * 999 / 1000) / (yBalance + (tokenYAmount * 999 / 1000))
 
 ### 파급력
 Impact : Medium
@@ -47,7 +47,7 @@ Impact : Medium
 
 
 addLiquidity 함수
-- 54 Line : [totalLiquidity == 0]
+- 54 Line : totalLiquidity == 0
 
 ### 파급력
 Impact : Medium
@@ -63,9 +63,9 @@ Impact : Medium
 
 
 addLiquidity 함수
-- 66 Line : [tokenX.transferFrom(msg.sender,address(this),tokenXAmount)]
-- 67 Line : [tokenY.transferFrom(msg.sender,address(this),tokenYAmount)]
-- 68 Line : [balances[address(tokenX)] += tokenXAmount]
+- 66 Line : tokenX.transferFrom(msg.sender,address(this),tokenXAmount)
+- 67 Line : tokenY.transferFrom(msg.sender,address(this),tokenYAmount)
+- 68 Line : balances[address(tokenX)] += tokenXAmount
 위 코드로 인해 Dex.balances에서 교차 함수 재진입이 가능하다.
 
 ### 파급력
@@ -100,9 +100,9 @@ Impact : Medium
 
 
 addLiquidity 함수
-- 66 Line : [tokenX.transferFrom(msg.sender,address(this),tokenXAmount)]
-- 67 Line : [tokenY.transferFrom(msg.sender,address(this),tokenYAmount)]
-- 70 Line : [LPToken_balances[msg.sender] += LPTokenAmount]
+- 66 Line : tokenX.transferFrom(msg.sender,address(this),tokenXAmount)
+- 67 Line : tokenY.transferFrom(msg.sender,address(this),tokenYAmount)
+- 70 Line : LPToken_balances[msg.sender] += LPTokenAmount
 
 ### 파급력
 Impact : Low
