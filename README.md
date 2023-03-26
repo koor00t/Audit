@@ -1,7 +1,8 @@
-#Audit
-##DreamplusAcademy
+# Audit
 
-##Dex
+## DreamplusAcademy
+
+## Dex
 - <https://github.com/jw-dream/DEX_solidity>
 - <https://github.com/Namryeong-Kim/DEX_Solidity>
 - <https://github.com/Gamj4tang/DEX_solidity>
@@ -17,7 +18,7 @@
 - <https://github.com/jt-dream/Dex_solidity>
 
 
-##Lending
+## Lending
 - <https://github.com/jw-dream/DEX_solidity>
 - <https://github.com/Namryeong-Kim/DEX_Solidity>
 - <https://github.com/Gamj4tang/DEX_solidity>
