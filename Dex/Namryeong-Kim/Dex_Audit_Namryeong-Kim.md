@@ -1,11 +1,9 @@
-# jw-dream
+# Namryeong-Kim
 
 ## unchecked-transfer
 ### 설명
 transfer/transferFrom 반환값을 체크하지 않는 버그.
 토큰은 전송 실패 시 revert되지 않고 false를 반환합니다.
-
-
 swap 함수
 - 31 Line : tokenX.transferFrom(msg.sender,address(this),tokenXAmount)
 - 32 Line : tokenY.transfer(msg.sender,outputAmount)
@@ -60,8 +58,6 @@ Impact : Medium
 ## reentrancy-no-eth
 ### 설명
 재진입 기능을 이용한 버그.
-
-
 addLiquidity 함수
 - 66 Line : [tokenX.transferFrom(msg.sender,address(this),tokenXAmount)]
 - 67 Line : [tokenY.transferFrom(msg.sender,address(this),tokenYAmount)]
@@ -81,8 +77,6 @@ CEI(Check-effects-interactions) 패턴을 적용시킨다.
 ## tautology
 ### 설명
 항진식을 포함하고 있다.
-
-
 swap 함수
 - 20 Line : [require(bool)(tokenXAmount >= 0 || tokenYAmount >= 0)]
 
@@ -96,9 +90,7 @@ Impact : Medium
 
 ## reentrancy-benign
 ### 설명
-이중 호출로 인한 재진입 버그.
-
-
+이중 호출로 인한 재진입 버그
 addLiquidity 함수
 - 66 Line : [tokenX.transferFrom(msg.sender,address(this),tokenXAmount)]
 - 67 Line : [tokenY.transferFrom(msg.sender,address(this),tokenYAmount)]
